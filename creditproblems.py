@@ -14,4 +14,10 @@ clf = clf.fit(x_train, y_train)
 
 print(clf.predict(x_test))
 
-
+parameters = {
+'splitter':('best', 'random'), 
+'criterion':('gini', 'entropy'), 
+'min_samples_splitint':[1, 10], 
+'min_samples_leafint' :[1,10],
+'max_featuresint':(“auto”, “sqrt”, “log2”)
+}
