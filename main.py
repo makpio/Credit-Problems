@@ -24,7 +24,7 @@ data = pd.read_csv("data/data.csv")
 y = data['Y']
 x = data.drop('Y', axis = 1)
 
-for testSize in [0.1, 0.3, 0.5, 0.7, 0.9]:
+for testSize in [0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96]:
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = testSize, random_state = 0)
 
     dt_X.append(100 * testSize)
