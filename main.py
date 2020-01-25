@@ -27,13 +27,13 @@ x = data.drop('Y', axis = 1)
 for testSize in [0.1, 0.3, 0.5, 0.7, 0.9]:
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = testSize, random_state = 0)
 
-    dt_X.append(100 * testSize)
-    dt_Y.append(
-            compare(
-                decisionTree(x_train = x_train, y_train = y_train, x_test = x_test),
-                list(y_test)
-            )
-    )
+    # dt_X.append(100 * testSize)
+    # dt_Y.append(
+    #         compare(
+    #             decisionTree(x_train = x_train, y_train = y_train, x_test = x_test),
+    #             list(y_test)
+    #         )
+    # )
 
     lr_X.append(100 * testSize)
     lr_Y.append(
@@ -42,12 +42,12 @@ for testSize in [0.1, 0.3, 0.5, 0.7, 0.9]:
                 list(y_test)
             )
     )
-    print(i)
+    print(testSize)
 
-with open("results/decisionTree.txt", "w") as file:
-    for i in range(len(dt_X)):
-        file.write( str(dt_X[i]) + '\n')
-        file.write( str(dt_Y[i]) + '\n')
+# with open("results/decisionTree.txt", "w") as file:
+#     for i in range(len(dt_X)):
+#         file.write( str(dt_X[i]) + '\n')
+#         file.write( str(dt_Y[i]) + '\n')
 
 with open("results/logisticRegression.txt", "w") as file:
     for i in range(len(lr_X)):
