@@ -56,7 +56,7 @@ x = data.drop('Y', axis = 1)
 # print (compare(list(lr_gs.predict(x_test)), list(y_test)))
 
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, random_state = 0)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.7, random_state = 0)
 
 
 parameters = {
@@ -65,8 +65,11 @@ parameters = {
     'fit_intercept' : (True, False),
     'intercept_scaling' : [0.0, 2.0],
     'class_weight' : ('balanced', None),
-    'random_state' : [0, 10],
-    'multi_class' : ('auto', 'ovr', 'multinomial')
+    'warm_start' : (True, False),
+    'n_jobs' : [1, 4]
+    # 'random_state' : [0, 5],
+
+
 }
 
 
